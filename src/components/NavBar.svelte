@@ -1,3 +1,7 @@
+<script>
+    import { cart } from "../stores/cart.js"
+</script>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="/images/White_pizza-logo.jpg" alt="Logo Pizza Delicious" style="width: 15%"></a>
@@ -20,7 +24,7 @@
                     >
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart">Cart</a>
+                    <a class="nav-link" href="cart">Cart ({JSON.parse($cart).length})</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -33,34 +37,8 @@
                     >
                         Dropdown
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                                >Something else here</a
-                            >
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit"
-                    >Search</button
-                >
-            </form>
         </div>
     </div>
 </nav>

@@ -17,9 +17,9 @@
     
 </script>
 
-<section class="container mt-5">
+<section class="container m-4">
 
-    <h1 class="text-center">Welcome to Pizza-Land !</h1>
+    <h1 class="text-center m-4">Welcome to Pizza-Land !</h1>
         
     <div class="row">
         {#each pizzas as pizza }
