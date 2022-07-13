@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/images/White_pizza-logo.jpg" alt="Logo Pizza Delicious" style="width: 15%"></a>
+        <a class="navbar-brand" href="/"><img src="/images/White_pizza-logo.jpg" alt="Logo Pizza Delicious" style="width: 15%"></a>
         <button
             class="navbar-toggler"
             type="button"
@@ -26,17 +26,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cart">Cart ({JSON.parse($cart).length})</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        Dropdown
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register">Register</a>
                 </li>
             </ul>
         </div>
