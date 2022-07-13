@@ -36,7 +36,7 @@
                     </li>
                 {:else}
                     <li class="nav-item">
-                        <span class="nav-link" on:click={() => $auth = null}>Log Out</span>
+                        <span class="nav-link" role='button' on:click={() => $auth = null}>Log Out ({$auth.email})</span>
                     </li>
                 {/if}
             </ul>
