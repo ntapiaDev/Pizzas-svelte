@@ -1,11 +1,12 @@
 <script>
     import API from "../services/Api";
+    import { auth } from "../stores/auth.js"
     import { goto } from '$app/navigation';
+    import { page } from '$app/stores';
 
-    let email = '';
-    let password = '';
-
-    let error = '';
+    let email = '',
+        password = '',
+        error = '';
 
     const handleForm = async () => {
         if(email !== '' && password !== '') {
@@ -13,16 +14,18 @@
             //Form valid, let's log the user !
             try {
                 const response = await API.post("/user/login", {
-                    "email" : email,
-                    "password" : password
+                    email,
+                    password
                 });
                 if(response.code !== 200) {
                     error = response.message;
                 } else {
                     //Log the user here
-                    
+                    $auth = {email, "token": response.access_token}
 
-                    // goto("/"); or cart?
+                    if($page.url.pathname !== "/cart" ) {
+                        goto("/")
+                    }
                 }
             } catch (error) {
                 console.error(error);

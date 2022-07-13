@@ -40,7 +40,7 @@ const put = (url, request) => apiRequest("put", url, request);
 const patch = (url, request) =>  apiRequest("patch", url, request);
 
 // expose your method to other services or actions
-const API ={
+const API = {
     get,
     delete: deleteRequest,
     post,

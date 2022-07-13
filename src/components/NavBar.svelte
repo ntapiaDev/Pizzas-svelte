@@ -1,4 +1,5 @@
 <script>
+    import { auth } from "../stores/auth.js"
     import { cart } from "../stores/cart.js"
 </script>
 
@@ -26,12 +27,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cart">Cart ({JSON.parse($cart).length})</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register">Register</a>
-                </li>
+                {#if $auth === null}
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register">Register</a>
+                    </li>
+                {:else}
+                    <li class="nav-item">
+                        <span class="nav-link" on:click={() => $auth = null}>Log Out</span>
+                    </li>
+                {/if}
             </ul>
         </div>
     </div>

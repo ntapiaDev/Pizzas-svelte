@@ -2,15 +2,14 @@
     import API from "../services/Api";
     import { goto } from '$app/navigation';
 
-    let email = '';
-    let password = '';
-    let repeat = '';
-    let checked = false;
+    let email = '',
+        password = '',
+        repeat = '',
+        checked = false,
+        error = '';
 
     const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
     const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,24}$/;
-
-    let error = '';
 
     $: errorEmail = email.length > 0 && !EMAIL_REGEX.test(email) ? 'Please enter a correct email' : '';
     $: errorPassword = password.length > 0 && !PWD_REGEX.test(password) ? 'Your password must be at least 6 caracters, with at least one letter and one number.' : '';
@@ -25,8 +24,8 @@
             //Form valid, let's add the user to the database !
             try {
                 const response = await API.post("/user/adduser", {
-                    "email" : email,
-                    "password" : password
+                    email,
+                    password
                 });
                 if(response.code !== 200) {
                     error = response.message;
